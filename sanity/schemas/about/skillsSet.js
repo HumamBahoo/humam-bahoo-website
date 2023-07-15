@@ -1,8 +1,8 @@
-// schemas/about/skill.js
+// schemas/about/skillsSet.js
 
 export default {
-  name: 'skillSet',
-  title: 'Skill Set',
+  name: 'skillsSet',
+  title: 'Skills Set',
   type: 'document',
   fields: [
     {
@@ -12,8 +12,8 @@ export default {
       validation: (Rule) => Rule.required().error('A category is required.'),
     },
     {
-      name: 'skills',
-      title: 'Skills',
+      name: 'skillsList',
+      title: 'Skills List',
       type: 'array',
       of: [{type: 'string'}],
       validation: (Rule) => Rule.required().min(1).error('At least one skill is required.'),

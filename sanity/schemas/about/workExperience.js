@@ -1,4 +1,5 @@
 // schemas/about/workExperience.js
+
 export default {
   name: 'workExperience',
   title: 'Work Experience',
