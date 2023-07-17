@@ -12,6 +12,11 @@ const isProd = process.env.NODE_ENV === 'production';
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
+  siteMetadata: {
+    title: `Humam Bahoo`,
+    siteUrl: `https://www.humambahoo.com`,
+    description: `A personal portfolio website for Humam Bahoo`,
+  },
   plugins: [
     `gatsby-plugin-postcss`,
     `gatsby-plugin-image`,
