@@ -6,9 +6,26 @@ export default {
   type: 'document',
   fields: [
     {
-      name: 'position',
-      title: 'Position',
+      name: 'jobTitle',
+      title: 'Job Title',
       type: 'string',
+      validation: (Rule) => Rule.required().error('A position is required.'),
+    },
+    {
+      name: 'jobType',
+      title: 'Job Type',
+      type: 'string',
+      options: {
+        list: [
+          {title: 'Full-time', value: 'Full-time'},
+          {title: 'Part-time', value: 'Part-time'},
+          {title: 'Contract', value: 'Contract'},
+          {title: 'Co-op', value: 'Co-op'},
+          {title: 'Intern', value: 'InternShip'},
+          {title: 'Temporary', value: 'Temporary'},
+        ],
+        layout: 'dropdown',
+      },
       validation: (Rule) => Rule.required().error('A position is required.'),
     },
     {
@@ -54,7 +71,7 @@ export default {
   ],
   preview: {
     select: {
-      title: 'position',
+      title: 'jobTitle',
       subtitle: 'employer',
     },
   },
