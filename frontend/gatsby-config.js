@@ -32,5 +32,7 @@ module.exports = {
         overlayDrafts: !isProd || true, // TODO: test if drafts is shown in dev mode only
       },
     },
+    // TODO: add and setup gatsby-plugin-manifest
+    // ... other plugins
   ],
 };
