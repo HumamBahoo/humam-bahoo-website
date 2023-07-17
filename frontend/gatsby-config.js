@@ -16,6 +16,7 @@ module.exports = {
     title: `Humam Bahoo`,
     siteUrl: `https://www.humambahoo.com`,
     description: `A personal portfolio website for Humam Bahoo`,
+    contactEmail: `humam.bahoo@gmail.com`,
   },
   plugins: [
     `gatsby-plugin-postcss`,
