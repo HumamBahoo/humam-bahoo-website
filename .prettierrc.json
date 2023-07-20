@@ -10,7 +10,8 @@
   "tabWidth": 2,
   "trailingComma": "es5",
   "useTabs": false,
-  "printWidth": 120,
+  "printWidth": 80,
+  "singleAttributePerLine": true,
   "plugins": ["prettier-plugin-tailwindcss"],
   "pluginSearchDirs": false
 }
