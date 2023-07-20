@@ -17,11 +17,11 @@ export default {
       type: 'string',
       options: {
         list: [
-          {title: 'Full-time', value: 'Full-time'},
-          {title: 'Part-time', value: 'Part-time'},
+          {title: 'Full-Time', value: 'Full-Time'},
+          {title: 'Part-Time', value: 'Part-Time'},
           {title: 'Contract', value: 'Contract'},
-          {title: 'Co-op', value: 'Co-op'},
-          {title: 'Intern', value: 'InternShip'},
+          {title: 'Co-Op', value: 'Co-Op'},
+          {title: 'Internship', value: 'Internship'},
           {title: 'Temporary', value: 'Temporary'},
         ],
         layout: 'dropdown',
@@ -55,11 +55,6 @@ export default {
       title: 'Location',
       type: 'string',
       validation: (Rule) => Rule.required().error('A location is required.'),
-    },
-    {
-      name: 'description',
-      title: 'Description',
-      type: 'text',
     },
     {
       name: 'achievements',
