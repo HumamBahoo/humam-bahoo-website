@@ -24,6 +24,13 @@ export default {
       options: {
         hotspot: true,
       },
+      fields: [
+        {
+          name: 'alternativeText',
+          title: 'Alternative Text',
+          type: 'string',
+        },
+      ],
     },
     {
       name: 'profileBanner',
@@ -32,6 +39,13 @@ export default {
       options: {
         hotspot: true,
       },
+      fields: [
+        {
+          name: 'alternativeText',
+          title: 'Alternative Text',
+          type: 'string',
+        },
+      ],
     },
     {
       name: 'resume',
