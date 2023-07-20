@@ -18,34 +18,20 @@ export default {
       validation: (Rule) => Rule.required('An introduction is required'),
     },
     {
-      name: 'profilePicture',
-      title: 'Profile Picture',
+      name: 'picture',
+      title: 'Picture',
       type: 'image',
       options: {
         hotspot: true,
       },
-      fields: [
-        {
-          name: 'alternativeText',
-          title: 'Alternative Text',
-          type: 'string',
-        },
-      ],
     },
     {
-      name: 'profileBanner',
-      title: 'Profile Banner',
+      name: 'banner',
+      title: 'Banner',
       type: 'image',
       options: {
         hotspot: true,
       },
-      fields: [
-        {
-          name: 'alternativeText',
-          title: 'Alternative Text',
-          type: 'string',
-        },
-      ],
     },
     {
       name: 'resume',
