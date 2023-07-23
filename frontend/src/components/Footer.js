@@ -1,9 +1,10 @@
 import React from 'react';
 
-import { graphql, useStaticQuery } from 'gatsby';
+import { Link, graphql, useStaticQuery } from 'gatsby';
 
-import { FaGithubSquare, FaLinkedin, FaYoutubeSquare } from 'react-icons/fa';
+// icons
 import { MdMail } from 'react-icons/md';
+import { FaGithubSquare, FaLinkedin, FaYoutubeSquare } from 'react-icons/fa';
 
 const Footer = () => {
   const data = useStaticQuery(graphql`
@@ -20,52 +21,96 @@ const Footer = () => {
   const { title, contactEmail } = data.site.siteMetadata;
 
   return (
-    <footer className="bg-stone-900 px-4 py-8 text-center">
-      <section className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-10">
-        <a
-          href={`mailto:${contactEmail}`}
-          className="flex flex-row items-center justify-between gap-4 rounded-t-lg border-b-2 border-orange-400 bg-stone-800 px-6 py-2 text-lg font-bold text-orange-300 no-underline hover:bg-stone-700 hover:text-orange-300"
-        >
-          <MdMail className="text-xl" /> Email Me
-        </a>
-
-        <div className="flex flex-col items-center justify-between gap-4">
-          <h2 className="text-xl font-semibold">Find Me</h2>
-
-          <nav className="flex flex-row gap-4 text-4xl">
-            <a
-              href="https://www.github.com/humambahoo"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-orange-400 hover:text-orange-200"
-            >
-              <FaGithubSquare />
-            </a>
-            <a
-              href="https://www.youtube.com/@humambahoo"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-orange-400 hover:text-orange-200"
-            >
-              <FaYoutubeSquare />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/humambahoo"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-orange-400 hover:text-orange-200"
-            >
-              <FaLinkedin />
-            </a>
-          </nav>
+    <footer>
+      <div className="details-container">
+        {/* Logo */}
+        <div className="logo">
+          <Link to="/">
+            <h1>
+              H<span>B</span>
+            </h1>
+          </Link>
         </div>
 
-        <p>
-          © {new Date().getFullYear()} {title}. All rights reserved.
-        </p>
-      </section>
+        {/* Send Email */}
+        <div className="send-email">
+          <a href={`mailto:${contactEmail}`}>
+            <MdMail /> Email Me
+          </a>
+        </div>
+
+        {/* Quick Links */}
+        <div className="links">
+          <h2>Quick Links</h2>
+
+          <div className="nav-links">
+            <nav>
+              <Link to="/">Home</Link>
+              <Link to="/about">About</Link>
+              {/* <Link to="/portfolio">Portfolio</Link> */}
+            </nav>
+          </div>
+
+          <div className="social">
+            <nav>
+              <a
+                href="https://www.github.com/humambahoo"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaGithubSquare />
+              </a>
+
+              <a
+                href="https://www.youtube.com/@humambahoo"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaYoutubeSquare />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/humambahoo"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaLinkedin />
+              </a>
+            </nav>
+          </div>
+        </div>
+
+        {/* Stack Used */}
+        <div className="stack">
+          <p>
+            Built with <strong>Gatsby</strong>
+          </p>
+
+          <p>
+            Styled with <strong>Tailwind CSS</strong>
+          </p>
+
+          <p>
+            Hosted on with <strong>Netlify</strong>
+          </p>
+        </div>
+      </div>
+
+      {/* Rights */}
+      <div className="rights-container">
+        <div className="copyrights">
+          <p>
+            © {new Date().getFullYear()} {title}. All rights reserved.
+          </p>
+        </div>
+
+        <div className="designed-by">
+          <p>
+            Designed by <strong>Humam Bahoo</strong>
+          </p>
+        </div>
+      </div>
     </footer>
   );
 };
-
 export default Footer;
