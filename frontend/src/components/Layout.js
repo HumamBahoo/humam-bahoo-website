@@ -4,10 +4,10 @@ import Footer from './Footer';
 
 const Layout = ({ children }) => {
   return (
-    <div>
+    <div className="flex min-h-screen flex-col justify-between bg-stone-800 text-stone-200">
       <Header />
 
-      <main>
+      <main className="px-4 py-12">
         <div>{children}</div>
       </main>
 
