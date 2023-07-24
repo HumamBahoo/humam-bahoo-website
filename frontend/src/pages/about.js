@@ -81,6 +81,8 @@ const AboutPage = ({ data }) => {
 
 export default AboutPage;
 
+export const Head = () => <title>About - Humam Bahoo</title>;
+
 export const query = graphql`
   query AboutPage {
     workExperienceList: allSanityWorkExperience(sort: { startDate: DESC }) {
