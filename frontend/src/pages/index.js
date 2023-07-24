@@ -12,16 +12,17 @@ const HomePage = ({ data }) => {
 
   return (
     <Layout>
-      <section className="flex flex-col items-center justify-between gap-8 lg:flex-row-reverse lg:py-16">
+      <section className="flex flex-col items-center justify-between gap-8 lg:flex-row-reverse lg:py-4">
         <GatsbyImage
           image={picture}
           alt={`${fullName} - Photo `}
           class="max-w-[350px] rounded-full lg:max-w-[400px] lg:basis-1/2"
         />
 
-        <div className="flex flex-col items-center justify-between gap-4 text-center lg:basis-1/2 lg:items-start lg:gap-8">
-          <h1 className="flex flex-col text-2xl lg:text-left">
-            Hello, I'm <span className="py-4 text-4xl font-black uppercase text-orange-400">{fullName}</span>
+        <div className="flex flex-col items-center justify-between gap-8 text-center lg:basis-1/2 lg:items-start">
+          <h1 className="flex flex-col text-xl sm:text-2xl lg:text-left">
+            Hello, I'm
+            <span className="py-2 text-3xl font-black uppercase text-orange-400 sm:text-4xl">{fullName}</span>
           </h1>
 
           <p className="lg:items-start lg:text-left">{introduction}</p>
@@ -30,7 +31,7 @@ const HomePage = ({ data }) => {
             href={resumeUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex flex-row items-center justify-between gap-2 rounded-xl bg-orange-400 px-4 py-2 text-lg font-black uppercase text-stone-900"
+            className="flex w-fit flex-row items-center justify-between gap-2 rounded-xl bg-orange-400 px-4 py-2 font-bold uppercase text-stone-900 hover:bg-orange-300"
           >
             My Resume <MdOpenInBrowser className="text-2xl" />
           </a>
