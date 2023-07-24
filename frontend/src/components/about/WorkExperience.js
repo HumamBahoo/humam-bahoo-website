@@ -16,23 +16,23 @@ const WorkExperience = ({ experienceDetails }) => {
   });
 
   return (
-    <div>
-      <div>
-        <h3>
+    <div className="py-4">
+      <div className="flex flex-col gap-4 py-6">
+        <h2 className="text-3xl font-bold">
           {jobTitle} {jobType !== 'Full-Time' && `(${jobType})`}
+        </h2>
+
+        <h3 className="text-xl font-bold">
+          {employer} - {location}.
         </h3>
 
-        <time>
+        <time className="text-lg font-bold">
           {startDate} - {isPresent ? 'Present' : endDate}
         </time>
       </div>
 
-      <h4>
-        {employer} - {location}.
-      </h4>
-
       {achievements.length > 0 && (
-        <ul>
+        <ul className="list-outside list-disc space-y-4 pl-8">
           {achievements.map((achievement, index) => (
             <li key={index}>{achievement}</li>
           ))}

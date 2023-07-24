@@ -5,7 +5,7 @@ const Language = ({ languageDetails }) => {
 
   return (
     <li>
-      <strong>{language}: </strong> {proficiency}
+      {language}: {proficiency}
     </li>
   );
 };

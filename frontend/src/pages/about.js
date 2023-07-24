@@ -14,63 +14,67 @@ const AboutPage = ({ data }) => {
 
   return (
     <Layout>
-      <h1>About Me</h1>
+      <div className="flex flex-col gap-12">
+        {workExperienceList.length > 0 && (
+          <section>
+            <h1 className="sticky top-0 bg-stone-900 py-4 text-4xl font-black uppercase underline">Work Experience</h1>
 
-      {workExperienceList.length > 0 && (
-        <section className="work-experiences">
-          <h2>Work Experience</h2>
+            <div>
+              {workExperienceList.map((workExperience) => (
+                <WorkExperience
+                  key={workExperience.id}
+                  experienceDetails={workExperience}
+                />
+              ))}
+            </div>
+          </section>
+        )}
 
-          {workExperienceList.map((workExperience) => (
-            <WorkExperience
-              key={workExperience.id}
-              experienceDetails={workExperience}
-            />
-          ))}
-        </section>
-      )}
+        {educationList.length > 0 && (
+          <section>
+            <h1 className="sticky top-0 bg-stone-900 py-4 text-4xl font-black uppercase underline">Education</h1>
 
-      {educationList.length > 0 && (
-        <section className="educations">
-          <h2>Education</h2>
-
-          {educationList.map((education) => (
-            <Education
-              key={education.id}
-              educationDetails={education}
-            />
-          ))}
-        </section>
-      )}
-
-      {skillsSetList.length > 0 && (
-        <section className="skills">
-          <h2>Technical Knowledge and Skills</h2>
-
-          <ul>
-            {skillsSetList.map((skillSet) => (
-              <SkillsSet
-                key={skillSet.id}
-                skillSetDetails={skillSet}
+            {educationList.map((education) => (
+              <Education
+                key={education.id}
+                educationDetails={education}
               />
             ))}
-          </ul>
-        </section>
-      )}
+          </section>
+        )}
 
-      {languageList.length > 0 && (
-        <section className="languages">
-          <h2>Languages</h2>
+        {skillsSetList.length > 0 && (
+          <section>
+            <h1 className="sticky top-0 bg-stone-900 py-4 text-4xl font-black uppercase underline">
+              Technical Knowledge and Skills
+            </h1>
 
-          <ul>
-            {languageList.map((language) => (
-              <Language
-                key={language.id}
-                languageDetails={language}
-              />
-            ))}
-          </ul>
-        </section>
-      )}
+            <ul className="ml-1 list-outside list-disc py-4 pl-4">
+              {skillsSetList.map((skillSet) => (
+                <SkillsSet
+                  key={skillSet.id}
+                  skillSetDetails={skillSet}
+                />
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {languageList.length > 0 && (
+          <section>
+            <h1 className="sticky top-0 bg-stone-900 py-4 text-4xl font-black uppercase underline">Languages</h1>
+
+            <ul className="ml-1 list-outside list-disc py-4 pl-4">
+              {languageList.map((language) => (
+                <Language
+                  key={language.id}
+                  languageDetails={language}
+                />
+              ))}
+            </ul>
+          </section>
+        )}
+      </div>
     </Layout>
   );
 };

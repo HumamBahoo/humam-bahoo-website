@@ -5,8 +5,7 @@ const SkillsSet = ({ skillSetDetails }) => {
 
   return (
     <li>
-      <strong>{category}: </strong>
-
+      <span className="font-bold">{category}:</span>{' '}
       {skillsList.map((skill, index) =>
         skillsList.length - 1 !== index ? <span key={index}>{skill}, </span> : <span key={index}>{skill}.</span>
       )}
