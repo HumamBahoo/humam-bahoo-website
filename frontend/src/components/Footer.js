@@ -21,8 +21,8 @@ const Footer = () => {
   const { title, contactEmail } = data.site.siteMetadata;
 
   return (
-    <footer>
-      <div className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-12 px-4 py-8">
+    <footer className="border-stone-700">
+      <div className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-4 border-y border-stone-700 px-4 pb-4 pt-8">
         <a
           href={`mailto:${contactEmail}`}
           className="flex flex-row items-center gap-2 rounded-md border-x border-orange-300 bg-stone-600 px-4 py-2 font-bold uppercase  transition-all hover:rounded-lg hover:bg-stone-800 hover:px-12 hover:text-orange-400"
@@ -31,7 +31,7 @@ const Footer = () => {
         </a>
 
         <div className="flex flex-col items-center gap-2">
-          <h2 className="font-black uppercase">Quick Links</h2>
+          <h2 className="font-bold uppercase">Quick Links</h2>
 
           <nav className="flex flex-col items-center">
             <Link
@@ -58,7 +58,7 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-col items-center gap-2">
-          <h2 className="font-black uppercase">Find Me</h2>
+          <h2 className="font-bold uppercase">Find Me</h2>
 
           <nav className="flex flex-row gap-4 text-3xl">
             <a
@@ -95,11 +95,11 @@ const Footer = () => {
           <span className="font-semibold underline decoration-orange-400">Tailwind CSS</span> | Hosted on{' '}
           <span className="font-semibold underline decoration-orange-400">Netlify</span>
         </p>
-
-        <p className="text-center">
-          © {new Date().getFullYear()} <span>{title}</span>. All rights reserved.
-        </p>
       </div>
+
+      <p className="py-4 text-center">
+        © {new Date().getFullYear()} <span>{title}</span>. All rights reserved.
+      </p>
     </footer>
   );
 };

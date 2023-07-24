@@ -9,21 +9,21 @@ const Header = () => {
     setIsOpen(!isOpen);
 
     if (!isOpen) {
-      document.body.classList.add('overflow-y-hidden', 'sm:overflow-y-auto');
+      document.body.classList.add('overflow-y-hidden', 'sm:overflow-y-scroll');
     } else {
-      document.body.classList.remove('overflow-y-hidden', 'sm:overflow-y-auto');
+      document.body.classList.remove('overflow-y-hidden');
     }
   };
 
   return (
-    <header className="text-orange-400">
+    <header className="bg-stone-900 text-orange-400">
       <div className="mx-auto flex max-w-6xl flex-row items-end justify-between gap-4 px-4 pb-4 pt-6">
         <Link
           to="/"
           className="text-3xl hover:text-orange-200"
         >
           <h1>
-            H<span className="font-black">B</span>
+            H<span className="font-bold">B</span>
           </h1>
         </Link>
 
@@ -33,7 +33,7 @@ const Header = () => {
         />
 
         {isOpen && (
-          <div className="fixed inset-0 z-50 flex flex-col items-center justify-start gap-12 bg-stone-800 p-8 font-black sm:hidden">
+          <div className="fixed inset-0 z-50 flex flex-col items-center justify-start gap-12 bg-stone-800 p-8 font-bold sm:hidden">
             <MdClose
               onClick={toggleMenu}
               className="cursor-pointer self-end text-3xl hover:text-orange-200"
@@ -43,18 +43,23 @@ const Header = () => {
               <Link
                 to="/"
                 className="hover:text-orange-200"
+                onClick={toggleMenu}
               >
                 Home
               </Link>
+
               <Link
                 to="/about"
                 className="hover:text-orange-200"
+                onClick={toggleMenu}
               >
                 About
               </Link>
+
               <Link
                 to="/portfolio"
                 className="hover:text-orange-200"
+                onClick={toggleMenu}
               >
                 Portfolio
               </Link>
@@ -62,7 +67,7 @@ const Header = () => {
           </div>
         )}
 
-        <nav className="hidden flex-row gap-8 text-lg font-black sm:flex">
+        <nav className="hidden flex-row gap-8 text-lg font-bold sm:flex">
           <Link
             to="/"
             className="hover:text-orange-200"
