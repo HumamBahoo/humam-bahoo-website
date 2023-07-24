@@ -1,26 +1,88 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'gatsby';
-import { MdMenu } from 'react-icons/md';
+import { MdClose, MdMenu } from 'react-icons/md';
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+
+    if (!isOpen) {
+      document.body.classList.add('overflow-y-hidden', 'sm:overflow-y-auto');
+    } else {
+      document.body.classList.remove('overflow-y-hidden', 'sm:overflow-y-auto');
+    }
+  };
+
   return (
-    <header className="flex flex-row items-center justify-between bg-stone-900 p-4">
-      <Link
-        to="/"
-        className="w-fit text-3xl text-orange-300 hover:text-orange-200 active:text-orange-300"
-      >
-        <h1>
-          H<span className="font-black">B</span>
-        </h1>
-      </Link>
+    <header className="text-orange-400">
+      <div className="mx-auto flex max-w-6xl flex-row items-end justify-between gap-4 px-4 pb-4 pt-6">
+        <Link
+          to="/"
+          className="text-3xl hover:text-orange-200"
+        >
+          <h1>
+            H<span className="font-black">B</span>
+          </h1>
+        </Link>
 
-      <MdMenu className="w-fit text-3xl text-orange-300 hover:cursor-pointer hover:text-orange-200 active:text-orange-300" />
+        <MdMenu
+          onClick={toggleMenu}
+          className="cursor-pointer text-4xl hover:text-orange-200 sm:hidden"
+        />
 
-      <nav className="hidden">
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/portfolio">Portfolio</Link>
-      </nav>
+        {isOpen && (
+          <div className="fixed inset-0 z-50 flex flex-col items-center justify-start gap-12 bg-stone-800 p-8 font-black sm:hidden">
+            <MdClose
+              onClick={toggleMenu}
+              className="cursor-pointer self-end text-3xl hover:text-orange-200"
+            />
+
+            <nav className="flex flex-col items-center gap-4 text-2xl">
+              <Link
+                to="/"
+                className="hover:text-orange-200"
+              >
+                Home
+              </Link>
+              <Link
+                to="/about"
+                className="hover:text-orange-200"
+              >
+                About
+              </Link>
+              <Link
+                to="/portfolio"
+                className="hover:text-orange-200"
+              >
+                Portfolio
+              </Link>
+            </nav>
+          </div>
+        )}
+
+        <nav className="hidden flex-row gap-8 text-lg font-black sm:flex">
+          <Link
+            to="/"
+            className="hover:text-orange-200"
+          >
+            Home
+          </Link>
+          <Link
+            to="/about"
+            className="hover:text-orange-200"
+          >
+            About
+          </Link>
+          <Link
+            to="/portfolio"
+            className="hover:text-orange-200"
+          >
+            Portfolio
+          </Link>
+        </nav>
+      </div>
     </header>
   );
 };

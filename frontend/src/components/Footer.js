@@ -21,51 +21,51 @@ const Footer = () => {
   const { title, contactEmail } = data.site.siteMetadata;
 
   return (
-    <footer className="flex flex-col items-center gap-4 bg-stone-900 px-4 py-8">
-      <div className="flex w-full flex-col items-center gap-8 rounded-2xl">
+    <footer>
+      <div className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-12 px-4 py-8">
         <a
           href={`mailto:${contactEmail}`}
-          className="flex w-fit flex-row items-center gap-2 border-x border-orange-300 bg-stone-800 px-6 py-1 font-bold text-orange-400 transition-all  hover:bg-stone-700 hover:px-10 hover:text-orange-200 active:text-orange-300"
+          className="flex flex-row items-center gap-2 rounded-md border-x border-orange-300 bg-stone-600 px-4 py-2 font-bold uppercase  transition-all hover:rounded-lg hover:bg-stone-800 hover:px-12 hover:text-orange-400"
         >
-          Email Me <MdEmail className="text-xl" />
+          Email Me <MdEmail className="text-2xl" />
         </a>
 
-        <div className="flex flex-col items-center gap-4">
-          <h2 className="text-xl">Quick Links</h2>
+        <div className="flex flex-col items-center gap-2">
+          <h2 className="font-black uppercase">Quick Links</h2>
 
-          <nav className="flex flex-col font-bold text-orange-300 ">
+          <nav className="flex flex-col items-center">
             <Link
               to="/"
-              className="text-orange-400 hover:text-orange-200  active:text-orange-300"
+              className="font-bold text-orange-400 hover:text-orange-200"
             >
               Home
             </Link>
 
             <Link
               to="/about"
-              className="text-orange-400 hover:text-orange-200  active:text-orange-300"
+              className="font-bold text-orange-400 hover:text-orange-200"
             >
               About
             </Link>
 
-            {/* <Link
+            <Link
               to="/portfolio"
-              className="text-orange-400 hover:text-orange-200 active:text-orange-300"
+              className="font-bold text-orange-400 hover:text-orange-200"
             >
               Portfolio
-            </Link> */}
+            </Link>
           </nav>
         </div>
 
-        <div className="flex flex-col items-center gap-4">
-          <h2 className="text-xl">Find Me</h2>
+        <div className="flex flex-col items-center gap-2">
+          <h2 className="font-black uppercase">Find Me</h2>
 
-          <nav className="flex flex-row gap-2 text-4xl">
+          <nav className="flex flex-row gap-4 text-3xl">
             <a
               href="https://www.github.com/humambahoo"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-orange-400 hover:text-orange-200 active:text-orange-300"
+              className="font-bold text-orange-500 hover:text-orange-200"
             >
               <FaGithubSquare />
             </a>
@@ -74,7 +74,7 @@ const Footer = () => {
               href="https://www.youtube.com/@humambahoo"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-orange-400 hover:text-orange-200 active:text-orange-300"
+              className="font-bold text-orange-500 hover:text-orange-200"
             >
               <FaYoutubeSquare />
             </a>
@@ -83,33 +83,22 @@ const Footer = () => {
               href="https://www.linkedin.com/in/humambahoo"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-orange-400 hover:text-orange-200 active:text-orange-300"
+              className="font-bold text-orange-500 hover:text-orange-200"
             >
               <FaLinkedin />
             </a>
           </nav>
         </div>
-        <div className=" flex flex-col gap-4 rounded-lg bg-stone-800 px-8 py-4 text-center">
-          <div className="flex flex-col items-center text-sm">
-            <p>
-              Built with <span className="font-bold text-orange-100">Gatsby</span>
-            </p>
 
-            <p>
-              Styled with <span className="font-bold text-orange-100">Tailwind CSS</span>
-            </p>
+        <p className="text-center">
+          Built with <span className="font-semibold underline decoration-orange-400">Gatsby</span> | Styled with{' '}
+          <span className="font-semibold underline decoration-orange-400">Tailwind CSS</span> | Hosted on{' '}
+          <span className="font-semibold underline decoration-orange-400">Netlify</span>
+        </p>
 
-            <p>
-              Hosted on <span className="font-bold text-orange-100">Netlify</span>
-            </p>
-          </div>
-
-          <p>
-            © {new Date().getFullYear()}{' '}
-            <span className="cursor-pointer underline decoration-orange-400 hover:text-orange-400">{title}</span>. All
-            rights reserved.
-          </p>
-        </div>
+        <p className="text-center">
+          © {new Date().getFullYear()} <span>{title}</span>. All rights reserved.
+        </p>
       </div>
     </footer>
   );
