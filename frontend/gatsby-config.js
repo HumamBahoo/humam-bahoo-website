@@ -2,6 +2,10 @@
 
 const isProd = process.env.NODE_ENV === 'production';
 
+if (isProd !== 'production') {
+  require('dotenv').config();
+}
+
 /**
  * Configure your Gatsby site with this file.
  *
