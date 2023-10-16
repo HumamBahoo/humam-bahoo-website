@@ -4,6 +4,8 @@ This is repository hosts my humble personal portfolio website which aims to prov
 
 The documentation here servers as a personal reference for future work.
 
+**⚠️ Note:** This repo is deprecated and archived. If you are here from a link that I have provided, please go to [humambahoo-website](https://github.com/HumamBahoo/humambahoo-website). Thanks!
+
 > **As of Jul 25, 2023, this site is still a work in progress**. The interface is not 100% refined yet, and the portfolio page is currently under development.
 
 ## Overview
